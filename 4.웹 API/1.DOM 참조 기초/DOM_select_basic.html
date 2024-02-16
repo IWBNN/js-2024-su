@@ -12,11 +12,11 @@
 <body>
 <h1>Hello!</h1>
 <ul>
-    <li id="mango">망고</li>
-    <li id="banana">바나나</li>
-    <li id="apple">사과</li>
-    <li id="watermelon">수박</li>
-    <li id="orange">오렌지</li>
+    <li class="fruit" id="mango">망고</li>
+    <li class="fruit" id="banana">바나나</li>
+    <li class="fruit" id="apple">사과</li>
+    <li class="fruit" id="watermelon">수박</li>
+    <li class="fruit" id="orange">오렌지</li>
 </ul>
 <script>
     // document 에서 DOM TREE 구조에 대해서 직접 child 를 순회할 수도 있다.
@@ -34,6 +34,12 @@
     const $heading1 = document.getElementsByTagName('h1')[0];
     console.log($heading1);
     $heading1.style.color = 'cornflowerblue';
+
+    // 클래스명으로 화면 요소 선택
+    const $fruitItems = document.getElementsByClassName('fruit');
+    for (let item of $fruitItems){
+        console.log(item);
+    }
 </script>
 </body>
 </html>
