@@ -24,7 +24,7 @@ img {
 
 /* 공통 UI 시작 */
 body {
-    font: 17px/1.4 "orbitron";
+    font: 17px/1.4 "orbitron"; /* font: font-size/line-height "font-type" */
     letter-spacing: 1px;
     color: #ddd;
     background: #000;
@@ -34,6 +34,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
+    perspective: 1500px;
 }
 
 .wrap > video {
@@ -64,7 +65,7 @@ body {
     margin-top: -400px;
 
     transform-style: preserve-3d; /* 3D 변형에 대해서 적용 가능해짐 */
-    /*animation: panorama-spin linear 10s infinite;*/
+    animation: panorama-spin linear 10s infinite;
 }
 
 .wrap #circle article { /* article 이 .face$ 임 */
@@ -73,6 +74,7 @@ body {
     position: absolute; /* body, main, circle 중에 기준점 결정 필요 */
     top: 0;
     left: 0;
+    backface-visibility: hidden;
     /*border: 3px solid white; !* 임시 테두리 *!*/
 }
 
@@ -133,39 +135,36 @@ body {
 /* === 공통 UI 시작 === */
 
 /* ==== face 요소 개별 제어 시작 ==== */
-.face1 {
-    /*  사이트 네비게이션  */
-    display: none;
+.face1 {  /*  사이트 네비게이션  */
+    transform: rotateY(0deg) translateZ(-765px);
 }
 
 .face2 {
-    display: none;
+    transform: rotateY(45deg) translateZ(-765px);
 }
 
 .face3 {
-    display: none;
+    transform: rotateY(90deg) translateZ(-765px);
 }
 
 .face4 {
-    display: none;
+    transform: rotateY(135deg) translateZ(-765px);
 }
 
-.face5 {
-    /* company slogan */
-
+.face5 {  /* company slogan */
+    transform: rotateY(180deg) translateZ(-765px);
 }
 
 .face6 {
-    display: none;
+    transform: rotateY(225deg) translateZ(-765px);
 }
 
 .face7 {
-    display: none;
+    transform: rotateY(270deg) translateZ(-765px);
 }
 
-.face8 {
-    /* weather */
-    display: none;
+.face8 {  /* weather */
+    transform: rotateY(315deg) translateZ(-765px);
 }
 
 /* ==== face 요소 개별 제어 종료 ====*/
@@ -176,7 +175,7 @@ body {
 /* inner, nav, div, p, i, h2 */
 .face1 .inner > nav div {
     width: 290px;
-    height: 250px;
+    height: 254px;
     float: left;
     margin-bottom: 20px;
     text-align: center;
@@ -279,7 +278,7 @@ body {
 /* h2, span, i */
 #circle .face8 .inner > div:nth-of-type(2) {
     width: 290px;
-    height: 400px;
+    height: 380px;
     float: left;
     margin-right: 20px;
 }
@@ -296,7 +295,7 @@ body {
 /* h3, p, i */
 #circle .face8 .inner > div:nth-of-type(3) {
     width: 290px;
-    height: 400px;
+    height: 380px;
     float: left;
 }
 
